@@ -93,7 +93,7 @@ public class BuildBinaryTreeFromPrePost {
                     break;
                 }
             }
-            if (preCursor < rightRootPreIndex || start == end) {
+            if (preCursor < rightRootPreIndex) {
                 root.left = buildSubTree(preorder, postorder, preCursor, rightRootPreIndex == 0 ? preorder.length : rightRootPreIndex);
             }
             if (preCursor >= rightRootPreIndex && preCursor < end && rightRootPreIndex !=0) {
