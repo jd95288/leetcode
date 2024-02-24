@@ -1,4 +1,4 @@
-package legacy;
+package _legacy;
 
 import java.util.ArrayList;
 import java.util.HashMap;
