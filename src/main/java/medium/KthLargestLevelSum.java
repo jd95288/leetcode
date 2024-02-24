@@ -41,11 +41,33 @@ public class KthLargestLevelSum {
         System.out.println(res);
     }
 
+    public final int MAX = 100000;
+    public long[] laccBetter = new long[MAX];
+
+    public long kthLargestLevel(TreeNode root, int k) {
+        traverseSubTree1(root, 0);
+        Arrays.sort(laccBetter);
+        //这个判断放到排序之后
+        if (laccBetter[MAX-k] == 0) {
+            return -1;
+        }
+        return laccBetter[MAX-k];
+    }
+    public void traverseSubTree1(TreeNode subTree, int level) {
+        laccBetter[level] += subTree.val;
+        if (subTree.left != null) {
+            traverseSubTree1(subTree.left, level + 1);
+        }
+        if (subTree.right != null) {
+            traverseSubTree1(subTree.right, level + 1);
+        }
+    }
+
     // 使用递归的话就是占用空间大，需要保存栈信息，这个算是深度优先遍历，先序遍历；25ms,76.18M
     // 广度优先需要使用队列，将子树根节点放入队列，消费队列求和，再将子树根节点放入队列，记录laccBetter；这个是官方解答，不过需要45ms（击败了14.52），空间55.77M（击败了100%）
     // 最快的应该是BFS（广度优先搜索）+排序/快速选择
     // 什么是快速选择？快速选择的思想是省略了一些无用的排序操作，直接将问题转换为n-k位置的数组分隔，左侧小于，右侧大于。
-    public long[] laccBetter = new long[100000];
+
     public int maxlevel = 0;
     public long kthLargestLevelSumBetter(TreeNode root, int k) {
         traverseSubTreeUpdateBetter(root, 0);
@@ -54,7 +76,7 @@ public class KthLargestLevelSum {
         }
         //O(n log(n))
         Arrays.sort(laccBetter);
-        return laccBetter[100000-k];
+        return laccBetter[MAX-k];
     }
     public void traverseSubTreeUpdateBetter(TreeNode subTree, int level) {
         //可以不记录这个值，排序后使用lacc[100000-k] == 0来返回，但是效果不明显，没有提升1ms
