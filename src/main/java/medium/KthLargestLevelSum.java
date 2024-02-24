@@ -42,18 +42,18 @@ public class KthLargestLevelSum {
     }
 
     public final int MAX = 100000;
-    public long[] laccBetter = new long[MAX];
+    public long[] lacc = new long[MAX];
 
     public long kthLargestLevel(TreeNode root, int k) {
         traverseSubTree(root, 0);
-        Arrays.sort(laccBetter);
-        if (laccBetter[MAX-k] == 0) {
+        Arrays.sort(lacc);
+        if (lacc[MAX-k] == 0) {
             return -1;
         }
-        return laccBetter[MAX-k];
+        return lacc[MAX-k];
     }
     public void traverseSubTree(TreeNode subTree, int level) {
-        laccBetter[level] += subTree.val;
+        lacc[level] += subTree.val;
         if (subTree.left != null) {
             traverseSubTree(subTree.left, level + 1);
         }
