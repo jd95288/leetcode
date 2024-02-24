@@ -1,4 +1,4 @@
-package com.test.leetcode;
+package legacy;
 
 import java.util.ArrayList;
 import java.util.HashMap;
