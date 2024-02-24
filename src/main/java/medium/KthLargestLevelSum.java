@@ -37,7 +37,7 @@ public class KthLargestLevelSum {
 
     public static void main(String[] args) {
         KthLargestLevelSum main = new KthLargestLevelSum();
-        long res = main.kthLargestLevel(new TreeNode(1, new TreeNode(2), new TreeNode(3)), 2);
+        long res = main.kthLargestLevelSum(new TreeNode(1, new TreeNode(2), new TreeNode(3)), 2);
         System.out.println(res);
     }
 
@@ -45,7 +45,7 @@ public class KthLargestLevelSum {
 
     public long[] lacc = new long[MAX];
 
-    public long kthLargestLevel(TreeNode root, int k) {
+    public long kthLargestLevelSum(TreeNode root, int k) {
         traverseSubTree(root, 0);
         Arrays.sort(lacc);
         if (lacc[MAX-k] == 0) {
