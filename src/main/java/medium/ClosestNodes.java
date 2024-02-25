@@ -51,6 +51,7 @@ public class ClosestNodes {
     public List<List<Integer>> closestNodes(TreeNode root, List<Integer> queries) {
         Arrays.fill(values, -1);
         traverseSubTree(root);
+        // 遍历之后values并非有序
         Arrays.sort(values);
         List<List<Integer>> res = new ArrayList<>(queries.size());
         for (Integer query : queries) {
