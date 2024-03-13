@@ -37,7 +37,6 @@ public class GetHint {
                 cows += Math.min(missArray[i], cowsArray[i]);
             }
         }
-        // 不要拼接字符串
         return new StringBuilder().append(bulls).append('A').append(cows).append('B').toString();
     }
 
