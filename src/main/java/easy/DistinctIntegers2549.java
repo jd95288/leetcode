@@ -10,7 +10,7 @@ package easy;
  * @author jd95288
  * @date 2024-03-23 21:18
  */
-public class DistinctIntegers {
+public class DistinctIntegers2549 {
     public int distinctIntegers(int n) {
         return n == 1 ? 1 : n - 1;
     }
