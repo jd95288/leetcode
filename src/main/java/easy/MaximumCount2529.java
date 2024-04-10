@@ -13,6 +13,28 @@ import java.util.Arrays;
  */
 public class MaximumCount2529 {
 
+    /**
+     * 二分查找
+     */
+    public int maximumCount_v2(int[] nums) {
+        int neg = bs(nums, 0);
+        int pos = bs(nums, 1);
+        return Math.max(neg, nums.length - pos);
+    }
+
+    public int bs(int[] nums, int key) {
+        int low = 0, high = nums.length;
+        while (low != high) {
+            int middle = (low + high) >> 1;
+            if (nums[middle] >= key) {
+                high = middle;
+            } else {
+                low = middle + 1;
+            }
+        }
+        return low;
+    }
+
     public int maximumCount(int[] nums) {
         int pos = 0;
         int neg = 0;
