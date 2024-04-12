@@ -1,7 +1,5 @@
 package easy;
 
-import java.util.Arrays;
-
 /**
  * 找到冠军 I
  * 一场比赛中共有 n 支队伍，按从 0 到  n - 1 编号。
