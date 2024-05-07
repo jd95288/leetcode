@@ -16,6 +16,7 @@ public class LengthOfLongestSubstring3 {
         char[] c = s.toCharArray();
         Map<Character, Integer> map = new HashMap<>();
         int res = 0;
+        // 字串长度
         int l = 0;
         for (int i = 0; i < c.length; i++) {
             if (map.get(c[i]) == null) {
