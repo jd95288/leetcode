@@ -42,19 +42,17 @@ public class TotalCost2462 {
                 break;
             }
         }
-        // 不使用long会溢出
         long res = 0;
         for (int i = 0; i < k && !q.isEmpty(); i++) {
             Integer[] c = q.poll();
             res += c[0];
-            // 经过上面的处理，right指向的位置可能还未加入队列（除非上面leftPos == rightPos）
             if (leftPos > rightPos) {
                 continue;
             }
             if (c[1] < leftPos) {
                 q.offer(new Integer[]{costs[leftPos], leftPos});
                 leftPos++;
-            } else if (c[1] >= rightPos) {
+            } else if (c[1] > rightPos) {
                 q.offer(new Integer[]{costs[rightPos], rightPos});
                 rightPos--;
             }
@@ -63,9 +61,4 @@ public class TotalCost2462 {
         return res;
     }
 
-    public static void main(String[] args) {
-        TotalCost2462 main = new TotalCost2462();
-//        System.out.println(main.totalCost(new int[]{17, 12, 10, 2, 7, 2, 11, 20, 8}, 3, 4));
-        System.out.println(main.totalCost(new int[]{31,25,72,79,74,65,84,91,18,59,27,9,81,33,17,58}, 11, 2));
-    }
 }
