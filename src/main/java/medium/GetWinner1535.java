@@ -29,6 +29,7 @@ public class GetWinner1535 {
                 cnt++;
             } else {
                 winner = arr[i];
+                // 每次比试都在0与1之间，谁赢了都要置1，并非只有与其后面的比赢了才加1
                 cnt = 1;
             }
         }
