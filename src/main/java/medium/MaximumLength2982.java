@@ -3,8 +3,9 @@ package medium;
 import java.util.*;
 
 /**
- * 找出出现至少三次的最长特殊子字符串 I
- * <p>
+ * 找出出现至少三次的最长特殊子字符串 II
+ *
+ * 与I相比，数据范围变成了5 * 10^5
  * 给你一个仅由小写英文字母组成的字符串 s 。
  * 如果一个字符串仅由单一字符组成，那么它被称为 特殊 字符串。
  * 例如，字符串 "abc" 不是特殊字符串，而字符串 "ddd"、"zz" 和 "f" 是特殊字符串。
@@ -12,9 +13,9 @@ import java.util.*;
  * 子字符串 是字符串中的一个连续 非空 字符序列。
  *
  * @author jd95288
- * @date 2024-05-29 8:42
+ * @date 2024-05-30 8:39
  */
-public class MaximumLength2981 {
+public class MaximumLength2982 {
     public int maximumLength(String s) {
         int res = -1;
         Map<Character, List<Integer>> map = new HashMap<>(26);
@@ -58,5 +59,4 @@ public class MaximumLength2981 {
         }
         return res == 0 ? -1 : res;
     }
-
 }
