@@ -14,6 +14,7 @@ package easy;
  */
 public class MaxOperations3038 {
 
+
     public int maxOperations(int[] nums) {
         int cnt = 1;
         int n = nums.length;
