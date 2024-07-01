@@ -12,6 +12,7 @@ package easy;
  */
 public class MySqrt69 {
 
+
     public int mySqrt(int x) {
         long res = 0;
         while (res * res <= x) {
