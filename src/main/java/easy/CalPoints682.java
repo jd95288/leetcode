@@ -25,14 +25,18 @@ public class CalPoints682 {
         List<Integer> points = new ArrayList<>(n);
         for (int i = 0; i < n; i++) {
             int cur = points.size();
-            if ("+".equals(operations[i])) {
-                points.add(points.get(cur - 1) + points.get(cur - 2));
-            } else if ("D".equals(operations[i])) {
-                points.add(points.get(cur - 1) * 2);
-            } else if ("C".equals(operations[i])) {
-                points.remove(cur - 1);
-            } else {
-                points.add(Integer.parseInt(operations[i]));
+            switch (operations[i]) {
+                case "+":
+                    points.add(points.get(cur - 1) + points.get(cur - 2));
+                    break;
+                case "D":
+                    points.add(points.get(cur - 1) * 2);
+                    break;
+                case "C":
+                    points.remove(cur - 1);
+                    break;
+                default:
+                    points.add(Integer.parseInt(operations[i]));
             }
         }
         for (int point : points) {
