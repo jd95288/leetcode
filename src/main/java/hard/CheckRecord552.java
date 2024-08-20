@@ -19,6 +19,7 @@ package hard;
  */
 public class CheckRecord552 {
     private static final int MOD = 1000000007;
+
     public int checkRecord(int n) {
         if (n == 1) {
             return 3;
