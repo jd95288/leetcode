@@ -18,6 +18,7 @@ package hard;
  * @date 2024-08-19 9:53
  */
 public class CheckRecord552 {
+
     private static final int MOD = 1000000007;
 
     public int checkRecord(int n) {
