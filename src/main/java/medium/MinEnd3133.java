@@ -16,6 +16,7 @@ import java.util.List;
  */
 public class MinEnd3133 {
 
+
     public long minEnd(int n, int x) {
         List<Integer> zeroIndex = new ArrayList<>(63);
         int i = 0;
