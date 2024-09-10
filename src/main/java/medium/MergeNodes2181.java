@@ -15,6 +15,7 @@ import utils.ListNode;
  */
 public class MergeNodes2181 {
 
+
     public ListNode mergeNodes(ListNode head) {
         ListNode zeroNode = new ListNode();
         ListNode res = head;
