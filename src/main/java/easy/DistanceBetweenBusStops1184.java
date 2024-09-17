@@ -12,6 +12,7 @@ package easy;
  */
 public class DistanceBetweenBusStops1184 {
 
+
     public int distanceBetweenBusStops(int[] distance, int start, int destination) {
         int n = distance.length;
         int s = Math.min(start, destination);
