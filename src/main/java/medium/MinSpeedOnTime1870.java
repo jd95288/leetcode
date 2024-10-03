@@ -13,16 +13,17 @@ package medium;
  * @date 2024-10-02 21:44
  */
 public class MinSpeedOnTime1870 {
-    /**
-     * 执行通过
-     */
+
     public int minSpeedOnTime(int[] dist, double hour) {
         long sum = 0;
+        int max = 0;
         for (int value : dist) {
             sum += value;
+            max = Math.max(max, value);
         }
+        max *= 100;
         int v = (int) Math.ceil(sum / hour - 0.5);
-        long l = v, r = 200 * sum, m = l + (r - l) / 2;
+        long l = v, r = max, m = l + (r - l) / 2;
         while (l <= r) {
             if (check(dist, hour, m)) {
                 r = m - 1;
@@ -31,7 +32,7 @@ public class MinSpeedOnTime1870 {
             }
             m = l + (r - l) / 2;
         }
-        return l > 200 * sum ? -1 : (int)l;
+        return l > max ? -1 : (int)l;
     }
 
     private boolean check(int[] dist, double hour, long m) {
