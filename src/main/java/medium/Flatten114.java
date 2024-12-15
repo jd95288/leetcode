@@ -12,6 +12,7 @@ import utils.TreeNode;
  */
 public class Flatten114 {
 
+
     TreeNode prev = null;
 
     public void flatten(TreeNode root) {
