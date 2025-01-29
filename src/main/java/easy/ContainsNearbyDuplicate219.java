@@ -14,13 +14,14 @@ public class ContainsNearbyDuplicate219 {
 
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         int n = nums.length;
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < n; i++) {
-            int num = nums[i];
-            if (map.get(num) != null && i - map.get(num) <= k) {
+        Set<Integer> set = new HashSet<>(k);
+        int left = 0;
+        for (int right = 0; right < n; right++) {
+            if (!set.add(nums[right])) {
                 return true;
-            } else {
-                map.put(num, i);
+            }
+            if (right - left == k) {
+                set.remove(nums[left++]);
             }
         }
         return false;
