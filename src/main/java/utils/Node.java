@@ -1,5 +1,7 @@
 package utils;
 
+import java.util.List;
+
 /**
  * @author jd95288
  * @date 2024-12-15 0:37
@@ -9,12 +11,19 @@ public class Node {
     public Node left;
     public Node right;
     public Node next;
+    public List<Node> children;
+    public List<Node> neighbors;
 
     public Node() {
     }
 
     public Node(int val) {
         this.val = val;
+    }
+
+    public Node(int val, List<Node> children) {
+        this.val = val;
+        this.children = children;
     }
 
     public Node(int val, Node left, Node right, Node next) {
