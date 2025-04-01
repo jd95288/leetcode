@@ -16,9 +16,6 @@ package medium;
  */
 public class MostPoints2140 {
 
-    /**
-     * 执行通过
-     */
     public long mostPoints_v1(int[][] questions) {
         int n = questions.length;
         long[] dp = new long[n + 1];
