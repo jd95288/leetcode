@@ -14,7 +14,7 @@ package medium;
  */
 public class SortTheStudents2545 {
 
-    public int[][] sortTheStudents_v1(int[][] score, int k) {
+    public int[][] sortTheStudents(int[][] score, int k) {
         return sort(score, 0, score.length - 1, k);
     }
 
