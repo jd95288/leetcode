@@ -2,7 +2,7 @@ package medium;
 
 /**
  * 零数组变换 II
- * <p>
+ *
  * 给你一个长度为 n 的整数数组 nums 和一个二维数组 queries，其中 queries[i] = [li, ri, vali]。
  * 每个 queries[i] 表示在 nums 上执行以下操作：
  * 将 nums 中 [li, ri] 范围内的每个下标对应元素的值 最多 减少 vali。
