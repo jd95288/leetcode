@@ -31,9 +31,9 @@ public class LongestPalindrome2131 {
             char b = key.charAt(1);
             if (a == b) {
                 Integer cnt = entry.getValue();
-                if (cnt % 2 == 1 && centerCnt < cnt) {
-                    res += centerCnt / 4 * 4;
-                    centerCnt = cnt * 2;
+                if (cnt % 2 == 1) {
+                    res += centerCnt / 2 * 4;
+                    centerCnt = cnt;
                 } else {
                     res += cnt / 2 * 4;
                 }
@@ -43,7 +43,7 @@ public class LongestPalindrome2131 {
             }
             entry.setValue(0);
         }
-        return res + centerCnt;
+        return res + centerCnt * 2;
     }
 
 }
