@@ -1,11 +1,9 @@
 package medium;
 
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * 设计电子表格
- *
+ * <p>
  * 电子表格是一个网格，它有 26 列（从 'A' 到 'Z'）和指定数量的 rows。每个单元格可以存储一个 0 到 105 之间的整数值。
  * 请你实现一个 Spreadsheet 类：
  * Spreadsheet(int rows) 初始化一个具有 26 列（从 'A' 到 'Z'）和指定行数的电子表格。所有单元格最初的值都为 0 。
